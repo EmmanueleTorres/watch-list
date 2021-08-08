@@ -1,0 +1,20 @@
+<div class="cover mb-4 d-flex align-items-center justify-content-center">
+  <div class="text-center text-white">
+    <h2>Save any kind of movie</h2>
+    <h3>Classic</h3>
+  </div>
+</div>
+<div class="container pt-5">
+  <h2>My lists</h2>
+  <div class="row py-3">
+    <% @lists.each do |list| %>
+      <div class="co-12 colsm-6 col-md-4 mb-3">
+        <%= link_to list_path(list), class:'text-decoration-none' do %>
+          <div class="card-category rounded-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('list_background.jfif') %>)">
+            <%= list.name %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
